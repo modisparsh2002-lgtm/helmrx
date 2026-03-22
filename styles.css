@@ -1880,7 +1880,7 @@ h3.h4,h4{font-size:.88rem!important}
 /* ══ PROTOCOL/BUNDLE IMAGES BIGGER ══ */
 .bundle-card img,.bundle-section img,.bundle-img{width:100%!important;height:auto!important;max-height:140px!important;object-fit:contain!important;margin:0 0 8px!important;display:block!important;background:var(--cream)!important;padding:8px!important;border-radius:6px!important}
 .bundle-card,.bundle-section>div{padding:16px!important}
-.bundle-card img,.bundle-section img{max-height:80px!important;object-fit:contain!important;margin:0 auto 8px!important;display:block!important}
+/* removed conflicting 80px rule — using 140px from line above */
 .bundle-card h3,.bundle-section h3{font-size:.82rem!important;margin-bottom:4px!important}
 .bundle-card p,.bundle-section p{font-size:.65rem!important;line-height:1.4!important;margin-bottom:6px!important}
 .bundle-actions .btn{font-size:.72rem!important;padding:10px 16px!important}
@@ -1967,7 +1967,7 @@ h3.h4,h4{font-size:.88rem!important}
 .pp-price-row{flex-direction:column!important;gap:6px!important}
 
 /* ══ MOBILE NAV ══ */
-.nav-mobile{top:52px!important;padding:20px!important}
+.nav-mobile{top:52px!important;padding:20px!important;background:#fff!important}
 .nav-mobile.open,.nav-mobile[style*="display: block"],.nav-mobile[style*="display:block"]{
   display:flex!important;
   flex-direction:column!important;
@@ -2092,6 +2092,17 @@ body{padding-bottom:130px!important}
 #waitlistEmail{width:100%!important;flex:none!important;margin-bottom:8px!important;padding:12px!important;font-size:.85rem!important;border-radius:8px!important}
 .cat-hero .btn-gold{width:100%!important;white-space:nowrap!important;font-size:.82rem!important;padding:12px!important}
 [style*="max-width:420px"][style*="display:flex"]{flex-direction:column!important;max-width:100%!important}
+
+/* ══ TREATMENT COMPARISON TABLE (inline-styled, 5 columns) ══ */
+table[style*="min-width:720px"]{min-width:auto!important;width:100%!important;font-size:.52rem!important;table-layout:fixed!important}
+table[style*="min-width:720px"] th{padding:8px 3px!important;font-size:.48rem!important;line-height:1.2!important}
+table[style*="min-width:720px"] td{padding:6px 3px!important;font-size:.5rem!important;line-height:1.3!important;word-break:break-word!important}
+table[style*="min-width:720px"] th:first-child,table[style*="min-width:720px"] td:first-child{width:22%!important}
+[style*="overflow-x:auto"][style*="min-width:720"] *{max-width:100%!important}
+
+/* ══ PROTOCOL CARD IMAGES IN CATEGORY PAGES ══ */
+.protocol-card img,.protocol-card .carousel-item-img{min-height:110px!important;max-height:160px!important}
+.bundle-section img{min-height:100px!important}
 
 .exit-intent{display:none!important}
 .sticky-quiz-cta{display:none!important}
