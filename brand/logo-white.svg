@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');
+    </style>
+  </defs>
+  <text x="0" y="46" font-family="'Plus Jakarta Sans', 'Inter', 'SF Pro Display', -apple-system, sans-serif" font-weight="800" font-size="52" letter-spacing="-1" fill="#FFFFFF">HELM</text>
+  <text x="185" y="46" font-family="'Plus Jakarta Sans', 'Inter', 'SF Pro Display', -apple-system, sans-serif" font-weight="500" font-size="36" fill="#35997A">Rx</text>
+</svg>

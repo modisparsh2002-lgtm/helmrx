@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HelmRx Brand Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0F1B2D;--navy-light:#1A2942;--navy-mid:#243650;
+  --teal:#2A7C6F;--teal-light:#35997A;--teal-pale:#E8F5F1;
+  --gold:#C4943C;--gold-light:#D4A94F;
+  --cream:#FAFAF7;--white:#FFF;
+  --text:#1A1A2E;--text-mid:#4A4A5A;--text-muted:#6B7280;
+  --cat-hair:#1B5E3B;--cat-sexual:#5B2D5E;--cat-weight:#374151;--cat-supp:#2A7C6F;
+  --font:'Plus Jakarta Sans',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+body{font-family:var(--font);color:var(--text);background:#F8F8F6;line-height:1.6}
+.page-header{background:var(--navy);color:#fff;padding:80px 40px 60px;text-align:center}
+.page-header h1{font-size:2.8rem;font-weight:800;letter-spacing:-1px;margin-bottom:8px}
+.page-header p{font-size:1rem;color:rgba(255,255,255,.5);font-weight:400}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+section{padding:60px 0}
+.section-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+h2{font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-.5px}
+.section-desc{color:var(--text-muted);font-size:.95rem;margin-bottom:40px;max-width:640px}
+.divider{border:none;border-top:1px solid #E5E7EB;margin:0}
+
+/* Logo showcase */
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.logo-card{border-radius:16px;padding:48px 40px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo-card.light{background:#fff;border:1px solid #E5E7EB}
+.logo-card.dark{background:var(--navy)}
+.logo-card.full{grid-column:1/-1}
+.logo-card-label{position:absolute;top:12px;left:16px;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.logo-card.dark .logo-card-label{color:rgba(255,255,255,.4)}
+
+/* Wordmark rendering */
+.wm{font-family:var(--font);letter-spacing:-1px;display:inline-flex;align-items:baseline}
+.wm-helm{font-weight:800;font-size:52px}
+.wm-rx{font-weight:500;font-size:36px;margin-left:2px}
+.wm.navy .wm-helm{color:var(--navy)}.wm.navy .wm-rx{color:var(--teal)}
+.wm.white .wm-helm{color:#fff}.wm.white .wm-rx{color:var(--teal-light)}
+.wm.mono .wm-helm,.wm.mono .wm-rx{color:var(--navy)}
+
+/* Icon mark */
+.icon-mark{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:800;font-size:42px;color:#fff}
+.icon-mark.navy-bg{background:var(--navy)}
+.icon-mark.teal-bg{background:var(--teal)}
+.icon-mark.white-bg{background:#fff;color:var(--navy);border:2px solid #E5E7EB}
+.icon-row{display:flex;gap:20px;align-items:center;justify-content:center}
+
+/* Color swatches */
+.color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.swatch{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #E5E7EB}
+.swatch-block{height:80px}
+.swatch-info{padding:12px 16px}
+.swatch-name{font-weight:700;font-size:.88rem;margin-bottom:4px}
+.swatch-hex{font-family:var(--mono);font-size:.78rem;color:var(--text-muted)}
+.swatch-use{font-size:.75rem;color:var(--text-muted);margin-top:4px}
+
+/* Typography */
+.type-sample{margin-bottom:32px;padding:24px;background:#fff;border-radius:12px;border:1px solid #E5E7EB}
+.type-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+.type-specimen{margin-bottom:4px}
+
+/* Sub-brand lockups */
+.lockup-grid{display:grid;gap:20px}
+.lockup-card{background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:32px;display:flex;align-items:center;gap:24px}
+.lockup-accent{width:4px;height:64px;border-radius:2px;flex-shrink:0}
+.lockup-text h3{font-weight:800;font-size:1.3rem;letter-spacing:-.5px;color:var(--navy);line-height:1.2}
+.lockup-text h3 span{font-weight:500;font-size:.88rem;color:var(--teal);margin-left:4px}
+.lockup-text .sub{font-weight:600;font-size:1.1rem;color:var(--navy-light);letter-spacing:.3px}
+.lockup-text .desc{font-size:.82rem;color:var(--text-muted);margin-top:2px}
+.lockup-category{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;display:inline-block;margin-bottom:8px}
+
+/* Packaging mockup */
+.pkg-section{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.pkg-box{border-radius:16px;overflow:hidden;position:relative}
+.pkg-front{background:#fff;border:2px solid #E5E7EB;border-radius:16px;padding:40px 32px;min-height:400px;display:flex;flex-direction:column}
+.pkg-front .pkg-logo{margin-bottom:auto}
+.pkg-front .pkg-product{margin-top:auto}
+.pkg-back{background:#F8F8F6;border:2px solid #E5E7EB;border-radius:16px;padding:28px 24px;font-size:.78rem;color:var(--text-mid);line-height:1.7}
+.pkg-accent-strip{height:4px;border-radius:0 0 2px 2px}
+.pkg-rx-badge{display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:600;color:var(--navy);background:rgba(15,27,45,.06);padding:4px 10px;border-radius:4px;margin-top:12px}
+
+/* Shipping box */
+.ship-box{background:#F5F5F0;border:2px dashed #D1D5DB;border-radius:16px;padding:60px 40px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+
+/* Insert cards */
+.insert-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.insert-card{background:#fff;border:2px solid #E5E7EB;border-radius:12px;padding:24px;font-size:.82rem}
+.insert-card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.insert-card .insert-label{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+
+/* Notes */
+.note{background:var(--teal-pale);border-radius:12px;padding:20px 24px;font-size:.88rem;color:var(--navy);margin:24px 0}
+.note strong{color:var(--teal)}
+.dont{background:#FEF2F2;border-radius:12px;padding:20px 24px;font-size:.88rem;color:#991B1B;margin:24px 0}
+
+/* Responsive */
+@media(max-width:700px){
+  .logo-grid,.pkg-section,.insert-grid{grid-template-columns:1fr}
+  .page-header h1{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <p style="margin-bottom:4px">Brand Identity Guide · March 2026</p>
+  <h1 style="display:inline-flex;align-items:baseline"><span style="font-weight:800;letter-spacing:-1.5px">HELM</span><span style="font-weight:500;font-size:2rem;color:rgba(42,124,111,.8);margin-left:4px">Rx</span></h1>
+  <p style="margin-top:12px">Clinical. Premium. Trustworthy.</p>
+</div>
+
+<div class="container">
+
+<!-- ═══ 1. LOGO SYSTEM ═══ -->
+<section>
+  <div class="section-label">01 · Logo System</div>
+  <h2>The Wordmark</h2>
+  <p class="section-desc">"HELM" is the mark. "Rx" is the pharmaceutical qualifier. The logo is pure typography — no icon, no illustration. This signals clinical authority, not lifestyle wellness.</p>
+
+  <div class="logo-grid">
+    <div class="logo-card light">
+      <span class="logo-card-label">Primary</span>
+      <div class="wm navy"><span class="wm-helm">HELM</span><span class="wm-rx">Rx</span></div>
+    </div>
+    <div class="logo-card dark">
+      <span class="logo-card-label">Reversed</span>
+      <div class="wm white"><span class="wm-helm">HELM</span><span class="wm-rx">Rx</span></div>
+    </div>
+    <div class="logo-card light">
+      <span class="logo-card-label">Mono (print)</span>
+      <div class="wm mono"><span class="wm-helm">HELM</span><span class="wm-rx">Rx</span></div>
+    </div>
+    <div class="logo-card light" style="background:var(--teal-pale)">
+      <span class="logo-card-label">On Teal Pale</span>
+      <div class="wm navy"><span class="wm-helm">HELM</span><span class="wm-rx">Rx</span></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin-bottom:16px;color:var(--navy)">Icon Mark</h3>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:20px">For favicon, app icon, shipping box stamp, and packaging emboss. The "H" from the wordmark typeface in a rounded square.</p>
+  <div class="logo-card light full" style="padding:32px">
+    <div class="icon-row">
+      <div style="text-align:center"><div class="icon-mark navy-bg">H</div><div style="font-size:.7rem;color:var(--text-muted);margin-top:8px">Primary</div></div>
+      <div style="text-align:center"><div class="icon-mark teal-bg">H</div><div style="font-size:.7rem;color:var(--text-muted);margin-top:8px">Accent</div></div>
+      <div style="text-align:center"><div class="icon-mark white-bg">H</div><div style="font-size:.7rem;color:var(--text-muted);margin-top:8px">Outline</div></div>
+      <div style="text-align:center"><div class="icon-mark navy-bg" style="width:32px;height:32px;font-size:20px;border-radius:8px">H</div><div style="font-size:.7rem;color:var(--text-muted);margin-top:8px">Favicon</div></div>
+      <div style="text-align:center"><div class="icon-mark navy-bg" style="width:20px;height:20px;font-size:12px;border-radius:5px">H</div><div style="font-size:.7rem;color:var(--text-muted);margin-top:8px">16px</div></div>
+    </div>
+  </div>
+
+  <div class="note"><strong>Rule:</strong> Always maintain clear space equal to the height of the "Rx" text around all sides of the logo. Never stretch, rotate, add drop shadows, or change the color relationship between HELM and Rx.</div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 2. COLORS ═══ -->
+<section>
+  <div class="section-label">02 · Color System</div>
+  <h2>Primary Palette</h2>
+  <p class="section-desc">Three-color discipline. Navy is authority. Teal is accessibility. Gold is premium, used sparingly.</p>
+
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-block" style="background:#0F1B2D"></div><div class="swatch-info"><div class="swatch-name">Navy</div><div class="swatch-hex">#0F1B2D</div><div class="swatch-use">Primary text, packaging base, logo</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#1A2942"></div><div class="swatch-info"><div class="swatch-name">Navy Light</div><div class="swatch-hex">#1A2942</div><div class="swatch-use">Secondary headings, card backgrounds</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#2A7C6F"></div><div class="swatch-info"><div class="swatch-name">Teal</div><div class="swatch-hex">#2A7C6F</div><div class="swatch-use">"Rx" in logo, CTAs, accent lines</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#E8F5F1"></div><div class="swatch-info"><div class="swatch-name">Teal Pale</div><div class="swatch-hex">#E8F5F1</div><div class="swatch-use">Info banners, light backgrounds</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#C4943C"></div><div class="swatch-info"><div class="swatch-name">Gold</div><div class="swatch-hex">#C4943C</div><div class="swatch-use">Sparingly: protocol badges, foil</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#FAFAF7"></div><div class="swatch-info"><div class="swatch-name">Cream</div><div class="swatch-hex">#FAFAF7</div><div class="swatch-use">Page backgrounds, packaging base</div></div></div>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin:40px 0 12px;color:var(--navy)">Category Accent Colors</h3>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:20px">Used as 5% accent on packaging only — thin strips, small color blocks. Never dominant.</p>
+
+  <div class="color-grid">
+    <div class="swatch"><div class="swatch-block" style="background:#1B5E3B"></div><div class="swatch-info"><div class="swatch-name">Strand · Hair</div><div class="swatch-hex">#1B5E3B</div><div class="swatch-use">Growth, clinical, natural</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#5B2D5E"></div><div class="swatch-info"><div class="swatch-name">Drive/Peak/Endure · Sexual</div><div class="swatch-hex">#5B2D5E</div><div class="swatch-use">Vitality without loudness</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#374151"></div><div class="swatch-info"><div class="swatch-name">Lean · Weight</div><div class="swatch-hex">#374151</div><div class="swatch-use">Precision, discipline</div></div></div>
+    <div class="swatch"><div class="swatch-block" style="background:#2A7C6F"></div><div class="swatch-info"><div class="swatch-name">Foundation · Supplements</div><div class="swatch-hex">#2A7C6F</div><div class="swatch-use">Brand teal — these are HelmRx native</div></div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 3. TYPOGRAPHY ═══ -->
+<section>
+  <div class="section-label">03 · Typography</div>
+  <h2>Type System</h2>
+  <p class="section-desc">Two typefaces, three roles. Precision and restraint.</p>
+
+  <div class="type-sample">
+    <div class="type-label">Brand / Headings — Plus Jakarta Sans</div>
+    <div class="type-specimen" style="font-weight:800;font-size:2rem;letter-spacing:-1px;color:var(--navy)">HELM Strand Protocol</div>
+    <div class="type-specimen" style="font-weight:600;font-size:1.2rem;color:var(--navy-light)">Doctor-prescribed treatment for male pattern hair loss</div>
+    <div class="type-specimen" style="font-weight:400;font-size:.95rem;color:var(--text-muted);margin-top:8px">Weights used: 800 (logo, major heads), 700 (section heads), 600 (sub-brands on packaging), 500 (Rx qualifier, body emphasis), 400 (body text on packaging)</div>
+  </div>
+
+  <div class="type-sample">
+    <div class="type-label">Clinical Data — JetBrains Mono</div>
+    <div class="type-specimen" style="font-family:var(--mono);font-size:.88rem;color:var(--navy)">Contains Finasteride IP 1mg. Schedule H drug. Rx only.</div>
+    <div class="type-specimen" style="font-family:var(--mono);font-size:.82rem;color:var(--text-muted);margin-top:4px">Mfg. Lic. No: KD/28/265 · Batch: HLR-2026-0342</div>
+    <div style="font-size:.82rem;color:var(--text-muted);margin-top:12px">Used for: active ingredient disclosures, regulatory text, batch codes, Health Score data. Signals pharmaceutical precision.</div>
+  </div>
+
+  <div class="dont">❌ <strong>Never use</strong> script fonts, all-caps body text, decorative serifs, or more than 2 typefaces in any single context. The website body font (DM Sans) stays on the website. Packaging and print use Plus Jakarta Sans exclusively.</div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 4. SUB-BRAND LOCKUPS ═══ -->
+<section>
+  <div class="section-label">04 · Sub-Brand Lockups</div>
+  <h2>Product Naming on Packaging</h2>
+  <p class="section-desc">Every product follows: HELM (brand) + Sub-brand + Descriptor. The category accent color appears as a thin vertical strip.</p>
+
+  <div class="lockup-grid">
+    <div class="lockup-card">
+      <div class="lockup-accent" style="background:var(--cat-hair)"></div>
+      <div class="lockup-text">
+        <div class="lockup-category" style="background:rgba(27,94,59,.08);color:var(--cat-hair)">Hair Loss</div>
+        <h3>HELM<span>Rx</span></h3>
+        <div class="sub">Strand</div>
+        <div class="desc">Finasteride 1mg · Daily Tablet · 30ct</div>
+      </div>
+    </div>
+    <div class="lockup-card">
+      <div class="lockup-accent" style="background:var(--cat-hair)"></div>
+      <div class="lockup-text">
+        <div class="lockup-category" style="background:rgba(27,94,59,.08);color:var(--cat-hair)">Hair Loss</div>
+        <h3>HELM<span>Rx</span></h3>
+        <div class="sub">Strand Duo</div>
+        <div class="desc">Fin 0.1% + Min 5% · Topical Spray · 60ml</div>
+      </div>
+    </div>
+    <div class="lockup-card">
+      <div class="lockup-accent" style="background:var(--cat-sexual)"></div>
+      <div class="lockup-text">
+        <div class="lockup-category" style="background:rgba(91,45,94,.08);color:var(--cat-sexual)">Sexual Wellness</div>
+        <h3>HELM<span>Rx</span></h3>
+        <div class="sub">Drive</div>
+        <div class="desc">Tadalafil 5mg · Daily Tablet · 30ct</div>
+      </div>
+    </div>
+    <div class="lockup-card">
+      <div class="lockup-accent" style="background:var(--cat-sexual)"></div>
+      <div class="lockup-text">
+        <div class="lockup-category" style="background:rgba(91,45,94,.08);color:var(--cat-sexual)">Sexual Wellness</div>
+        <h3>HELM<span>Rx</span></h3>
+        <div class="sub">Peak</div>
+        <div class="desc">Sildenafil 50mg · On-Demand Tablet · 8ct</div>
+      </div>
+    </div>
+    <div class="lockup-card">
+      <div class="lockup-accent" style="background:var(--cat-sexual)"></div>
+      <div class="lockup-text">
+        <div class="lockup-category" style="background:rgba(91,45,94,.08);color:var(--cat-sexual)">Sexual Wellness</div>
+        <h3>HELM<span>Rx</span></h3>
+        <div class="sub">Endure</div>
+        <div class="desc">Dapoxetine 30mg · On-Demand Tablet · 8ct</div>
+      </div>
+    </div>
+    <div class="lockup-card">
+      <div class="lockup-accent" style="background:var(--cat-weight)"></div>
+      <div class="lockup-text">
+        <div class="lockup-category" style="background:rgba(55,65,81,.08);color:var(--cat-weight)">Weight</div>
+        <h3>HELM<span>Rx</span></h3>
+        <div class="sub">Lean</div>
+        <div class="desc">Oral Semaglutide · Doctor Supervised</div>
+      </div>
+    </div>
+    <div class="lockup-card">
+      <div class="lockup-accent" style="background:var(--cat-supp)"></div>
+      <div class="lockup-text">
+        <div class="lockup-category" style="background:rgba(42,124,111,.08);color:var(--cat-supp)">Supplement</div>
+        <h3>HELM<span>Rx</span></h3>
+        <div class="sub">Foundation</div>
+        <div class="desc">D3 + B12 + Zinc + Magnesium · Daily Pack</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 5. PACKAGING SYSTEM ═══ -->
+<section>
+  <div class="section-label">05 · Packaging System</div>
+  <h2>Three-Layer Packaging</h2>
+  <p class="section-desc">Outer shipping box (privacy). Inner product box (brand). Information inserts (trust).</p>
+
+  <h3 style="font-size:1.1rem;margin-bottom:20px;color:var(--navy)">Layer 1: Shipping Box</h3>
+  <div class="ship-box">
+    <div class="icon-mark navy-bg" style="width:48px;height:48px;font-size:28px;border-radius:10px;opacity:.3">H</div>
+    <div style="font-size:.88rem;color:var(--text-muted)">Matte white corrugated · Single-color "H" stamp in navy · No product names, no category, no "men's health"</div>
+    <div style="font-family:var(--mono);font-size:.75rem;color:#9CA3AF;margin-top:8px">
+      HelmRx Health Pvt. Ltd.<br>
+      [Return Address]<br>
+      Shipping Label
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin:48px 0 20px;color:var(--navy)">Layer 2: Inner Product Box — Rx Product</h3>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:24px">Heavy matte white cardstock (300+ GSM). Category accent as bottom strip only. This box holds the manufacturer's drug packaging inside.</p>
+
+  <div class="pkg-section">
+    <!-- FRONT PANEL -->
+    <div class="pkg-front" style="border-bottom:none;border-radius:16px 16px 0 0">
+      <div class="pkg-logo">
+        <div class="wm navy" style="margin-bottom:4px"><span class="wm-helm" style="font-size:28px">HELM</span><span class="wm-rx" style="font-size:19px">Rx</span></div>
+      </div>
+      <div class="pkg-product" style="margin-top:auto">
+        <div style="font-weight:700;font-size:1.6rem;color:var(--navy);letter-spacing:-.5px;line-height:1.2">Strand</div>
+        <div style="font-size:.92rem;color:var(--text-mid);margin-top:4px">Finasteride 1mg</div>
+        <div style="font-size:.82rem;color:var(--text-muted);margin-top:2px">Daily Tablet · Hair Protocol</div>
+        <div class="pkg-rx-badge">℞ Prescription · 30 tablets · 1-month supply</div>
+      </div>
+      <div class="pkg-accent-strip" style="background:var(--cat-hair);margin:20px -32px -40px;height:5px"></div>
+    </div>
+
+    <!-- BACK PANEL -->
+    <div class="pkg-back">
+      <div style="font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:12px">HELM Strand — Finasteride Tablets IP 1mg</div>
+      
+      <div style="font-family:var(--mono);font-size:.72rem;line-height:1.8;margin-bottom:16px;padding:12px;background:#fff;border-radius:8px;border:1px solid #E5E7EB">
+        <strong>Active ingredient:</strong> Finasteride IP 1mg<br>
+        <strong>Classification:</strong> Schedule H Prescription Drug<br>
+        <strong>Mfg. by:</strong> [Manufacturer Name & Address]<br>
+        <strong>Mfg. Lic. No:</strong> [License Number]<br>
+        <strong>Batch:</strong> [Batch Code] · <strong>Exp:</strong> [Date]<br>
+        <strong>MRP:</strong> ₹[Price] (incl. all taxes)
+      </div>
+      
+      <div style="background:#FEF2F2;padding:10px 12px;border-radius:6px;font-size:.72rem;color:#991B1B;margin-bottom:12px;font-weight:600">
+        ⚠ Schedule H: To be sold by retail on the prescription of a Registered Medical Practitioner only.
+      </div>
+      
+      <div style="font-size:.72rem;line-height:1.6">
+        <strong>Storage:</strong> Store below 30°C in a dry place. Protect from light.<br>
+        <strong>Warning:</strong> Not suitable for women or children. May affect PSA test readings.<br>
+        <strong>Marketer:</strong> HelmRx Health Pvt. Ltd., [Address]<br>
+      </div>
+      
+      <div style="margin-top:16px;padding-top:12px;border-top:1px solid #E5E7EB;font-size:.72rem;color:var(--text-muted)">
+        Your prescribing physician: [Doctor Name, Registration No.]<br>
+        Questions? WhatsApp: [Number] · helmrx.in
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin:48px 0 20px;color:var(--navy)">Layer 2: Inner Box — Supplement (Full Custom)</h3>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:24px">For supplements, you own the full packaging. Same design language, but the product itself carries HelmRx branding.</p>
+
+  <div class="pkg-section">
+    <div class="pkg-front" style="border-bottom:none;border-radius:16px 16px 0 0">
+      <div class="pkg-logo">
+        <div class="wm navy" style="margin-bottom:4px"><span class="wm-helm" style="font-size:28px">HELM</span><span class="wm-rx" style="font-size:19px">Rx</span></div>
+      </div>
+      <div class="pkg-product" style="margin-top:auto">
+        <div style="font-weight:700;font-size:1.6rem;color:var(--navy);letter-spacing:-.5px;line-height:1.2">Foundation</div>
+        <div style="font-size:.92rem;color:var(--text-mid);margin-top:4px">D3 + B12 + Zinc + Magnesium</div>
+        <div style="font-size:.82rem;color:var(--text-muted);margin-top:2px">Daily Supplement Pack</div>
+        <div style="display:inline-flex;align-items:center;gap:4px;font-size:.72rem;font-weight:600;color:var(--teal);background:var(--teal-pale);padding:4px 10px;border-radius:4px;margin-top:12px">FSSAI Registered · 30 daily packs</div>
+      </div>
+      <div class="pkg-accent-strip" style="background:var(--cat-supp);margin:20px -32px -40px;height:5px"></div>
+    </div>
+
+    <div class="pkg-back">
+      <div style="font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:12px">HELM Foundation — Daily Supplement Pack</div>
+      <div style="font-family:var(--mono);font-size:.72rem;line-height:1.8;margin-bottom:16px;padding:12px;background:#fff;border-radius:8px;border:1px solid #E5E7EB">
+        <strong>Ingredients per daily pack:</strong><br>
+        Cholecalciferol (Vitamin D3) 2000 IU<br>
+        Methylcobalamin (Vitamin B12) 1500 mcg<br>
+        Zinc Bisglycinate 25 mg<br>
+        Magnesium Glycinate 400 mg<br><br>
+        <strong>FSSAI Lic. No:</strong> [Number]<br>
+        <strong>Best before:</strong> [Date] · <strong>Batch:</strong> [Code]<br>
+        <strong>MRP:</strong> ₹699 (incl. all taxes)
+      </div>
+      <div style="font-size:.72rem;line-height:1.6">
+        <strong>Directions:</strong> Take contents of one pack daily with meals.<br>
+        <strong>Storage:</strong> Store in a cool, dry place away from sunlight.<br>
+        <strong>Warning:</strong> Not for medicinal use. Not intended to diagnose, treat, cure, or prevent any disease.<br>
+        <strong>Manufactured by:</strong> [Manufacturer Name & Address]<br>
+        <strong>Marketed by:</strong> HelmRx Health Pvt. Ltd., [Address]
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;margin:48px 0 20px;color:var(--navy)">Layer 3: Information Inserts</h3>
+  <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:24px">Printed on same heavy stock. Same typography. These build trust and reduce post-purchase anxiety.</p>
+
+  <div class="insert-grid">
+    <div class="insert-card">
+      <div class="insert-label">Doctor Card</div>
+      <h4>Your Physician</h4>
+      <div style="padding:12px;background:var(--teal-pale);border-radius:8px;margin-bottom:12px">
+        <div style="font-weight:700;color:var(--navy)">Dr. Aamir Khan, MD</div>
+        <div style="font-size:.75rem;color:var(--text-muted)">MCI Registration: [Number]</div>
+      </div>
+      <p style="color:var(--text-mid);line-height:1.6">"I've reviewed your health profile and prescribed the following protocol. This treatment is clinically appropriate for your situation. I'll check in at Day 30 and Day 90 to monitor your progress."</p>
+      <div style="margin-top:12px;font-size:.75rem;color:var(--text-muted)">Questions? Contact your doctor via the HelmRx platform or WhatsApp.</div>
+    </div>
+
+    <div class="insert-card">
+      <div class="insert-label">Protocol Card</div>
+      <h4>The Regrowth Protocol</h4>
+      <div style="margin:12px 0">
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0F0ED;font-size:.82rem">
+          <span style="font-weight:600;color:var(--navy)">HELM Strand</span>
+          <span style="color:var(--text-muted)">1 tablet daily</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0F0ED;font-size:.82rem">
+          <span style="font-weight:600;color:var(--navy)">HELM Strand Topical</span>
+          <span style="color:var(--text-muted)">1ml to scalp, evening</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;font-size:.82rem">
+          <span style="font-weight:600;color:var(--navy)">HELM Strand Support</span>
+          <span style="color:var(--text-muted)">1 capsule with meal</span>
+        </div>
+      </div>
+      <div style="font-size:.75rem;color:var(--text-muted)">Take consistently. Results typically visible from 3–6 months.</div>
+    </div>
+
+    <div class="insert-card">
+      <div class="insert-label">Timeline Card</div>
+      <h4>What to Expect</h4>
+      <div style="margin:12px 0;font-size:.82rem;color:var(--text-mid);line-height:1.7">
+        <div style="margin-bottom:8px"><strong style="color:var(--navy)">Week 1–2:</strong> No visible changes yet. You may notice slight scalp sensitivity — this is normal.</div>
+        <div style="margin-bottom:8px"><strong style="color:var(--navy)">Month 1–2:</strong> Some men notice temporary increased shedding. This is actually a positive sign — weak hairs making way for stronger growth.</div>
+        <div style="margin-bottom:8px"><strong style="color:var(--navy)">Month 3–4:</strong> Shedding stabilises. You may notice new fine hairs appearing.</div>
+        <div><strong style="color:var(--navy)">Month 6+:</strong> Visible thickening and regrowth in most patients. Your doctor reviews progress at this milestone.</div>
+      </div>
+    </div>
+
+    <div class="insert-card">
+      <div class="insert-label">Safety Card</div>
+      <h4>Side Effects & Safety</h4>
+      <div style="margin:12px 0;font-size:.82rem;color:var(--text-mid);line-height:1.7">
+        <div style="margin-bottom:8px"><strong style="color:var(--navy)">Most common:</strong> The vast majority of men experience no side effects at all.</div>
+        <div style="margin-bottom:8px"><strong style="color:var(--navy)">Reported in 1–2%:</strong> Decreased libido or mild erectile changes. These are typically reversible upon stopping treatment.</div>
+        <div><strong style="color:var(--navy)">Contact your doctor if:</strong> You experience persistent mood changes, breast tenderness, or any symptom that concerns you. Your doctor is available via the HelmRx platform.</div>
+      </div>
+      <div style="font-size:.75rem;color:var(--text-muted);margin-top:8px">Full prescribing information provided with your medication.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══ 6. WHAT NOT TO DO ═══ -->
+<section>
+  <div class="section-label">06 · Brand Don'ts</div>
+  <h2>What Not to Do</h2>
+
+  <div class="dont" style="margin-bottom:16px">❌ <strong>No ship's wheels, anchors, or nautical imagery.</strong> The name "Helm" means control and direction. The metaphor works in the name. Making it literal in the logo puts you in Bold Care / Man Matters territory.</div>
+  <div class="dont" style="margin-bottom:16px">❌ <strong>No medical crosses, caduceus, or stethoscope icons.</strong> You're not a hospital. You're a premium treatment platform. The "Rx" in the wordmark does all the medical signaling you need.</div>
+  <div class="dont" style="margin-bottom:16px">❌ <strong>No glossy packaging, candy colors, or Instagram-gradient finishes.</strong> The brand architecture says it clearly: "HelmRx packaging should look like it belongs in a doctor's office, not on an Instagram influencer's shelf."</div>
+  <div class="dont" style="margin-bottom:16px">❌ <strong>No before/after photos on packaging.</strong> DCGI will flag this. No percentage claims on boxes. No comparison claims. No celebrity endorsements on physical product.</div>
+  <div class="dont">❌ <strong>No coupon codes, flash sale banners, or "limited time" urgency.</strong> The brand architecture explicitly prohibits these. Savings come through subscription tier commitment, not desperation marketing.</div>
+</section>
+
+</div>
+</body>
+</html>

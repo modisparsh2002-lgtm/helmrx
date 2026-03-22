@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');
+    </style>
+  </defs>
+  <!-- Category accent line -->
+  <rect x="0" y="0" width="4" height="80" fill="#1B5E3B" rx="2"/>
+  <!-- HELM master brand -->
+  <text x="20" y="32" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="800" font-size="28" letter-spacing="-0.5" fill="#0F1B2D">HELM</text>
+  <!-- Rx qualifier -->
+  <text x="115" y="32" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="500" font-size="19" fill="#2A7C6F">Rx</text>
+  <!-- Sub-brand name -->
+  <text x="20" y="62" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="600" font-size="24" letter-spacing="0.5" fill="#1A2942">Strand</text>
+  <!-- Descriptor -->
+  <text x="110" y="62" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="400" font-size="14" fill="#6B7280">Finasteride 1mg · Daily Tablet</text>

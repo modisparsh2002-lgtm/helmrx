@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');</style></defs>
+  <rect x="0" y="0" width="4" height="80" fill="#374151" rx="2"/>
+  <text x="20" y="32" font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" font-size="28" letter-spacing="-0.5" fill="#0F1B2D">HELM</text>
+  <text x="115" y="32" font-family="'Plus Jakarta Sans',sans-serif" font-weight="500" font-size="19" fill="#2A7C6F">Rx</text>
+  <text x="20" y="62" font-family="'Plus Jakarta Sans',sans-serif" font-weight="600" font-size="24" letter-spacing="0.5" fill="#1A2942">Lean</text>
+  <text x="88" y="62" font-family="'Plus Jakarta Sans',sans-serif" font-weight="400" font-size="14" fill="#6B7280">Oral Semaglutide · Doctor Supervised</text>
+</svg>

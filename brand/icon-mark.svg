@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&amp;display=swap');
+    </style>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#0F1B2D"/>
+  <text x="32" y="46" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Inter', 'SF Pro Display', -apple-system, sans-serif" font-weight="800" font-size="42" fill="#FFFFFF">H</text>
+</svg>
