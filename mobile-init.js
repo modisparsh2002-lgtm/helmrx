@@ -108,8 +108,12 @@
     'home': { name: 'Get Started', price: 'Free doctor consultation', action: null, btnText: 'Get Started Free' }
   };
 
+  // Which page is this?
+  var _stickyPage = '';
+
   function showStickyCta(page) {
     if (!stickyBar) return;
+    _stickyPage = page;
     var prod = productPages[page];
     var cat = categoryPages[page];
     if (prod) {
@@ -119,8 +123,8 @@
       stickyBtn.onclick = function() {
         if (typeof addToCart === 'function') addToCart(prod.sku, prod.fullName, prod.numPrice, prod.type, 'month');
       };
-      stickyBar.style.display = 'flex';
-      setTimeout(function() { stickyBar.classList.add('visible'); }, 100);
+      // Show immediately for product pages
+      stickyBar.classList.add('visible');
     } else if (cat) {
       stickyName.textContent = cat.name;
       stickyPrice.textContent = cat.price;
@@ -129,21 +133,19 @@
         if (cat.action && typeof navigateTo === 'function') navigateTo(cat.action);
         else if (typeof openCatChooser === 'function') openCatChooser();
       };
-      stickyBar.style.display = 'flex';
-      // Don't show immediately — wait for scroll
+      // Show after scroll for category pages
+      if (window.scrollY > 300) stickyBar.classList.add('visible');
     } else {
       stickyBar.classList.remove('visible');
-      setTimeout(function() { stickyBar.style.display = 'none'; }, 300);
     }
   }
 
   // Show/hide sticky CTA on scroll
   window.addEventListener('scroll', function() {
     if (!stickyBar) return;
-    var page = typeof currentPage !== 'undefined' ? currentPage : '';
+    var page = _stickyPage || (typeof currentPage !== 'undefined' ? currentPage : '');
     if (!productPages[page] && !categoryPages[page]) return;
-    if (stickyBar.style.display === 'none') return;
-    stickyBar.classList.toggle('visible', window.scrollY > 400);
+    stickyBar.classList.toggle('visible', window.scrollY > 300);
   }, { passive: true });
 
   showStickyCta(typeof currentPage !== 'undefined' ? currentPage : 'home');
